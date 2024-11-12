@@ -1,12 +1,17 @@
 package engi3255.sort;
 
 public class SelectionSortStd implements Sort{
+    int compare;
+
     public <T extends Comparable<T>> void SelectionSort(T[] a) {
         for (int last = a.length - 1; last >= 1; last--) {
             int max = 0;
-            for (int i = 1; i <= last; i++)
+            for (int i = 1; i <= last; i++){
                 if (a[i].compareTo(a[max]) > 0)
                     max = i;
+                this.compare++;
+            }
+
 
             T tmp = a[max];
             a[max] = a[last];
@@ -16,12 +21,12 @@ public class SelectionSortStd implements Sort{
 
     @Override
     public void sort(Comparable[] a) {
-        SelectionSort(a);
+        this.SelectionSort(a);
     }
 
     @Override
     public long getCompares() {
-        return 0;
+        return compare;
     }
 }
 

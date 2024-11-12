@@ -1,6 +1,7 @@
 package engi3255.sort;
 
 public class InsertionSortStd implements Sort {
+    int compare;
     public <T extends Comparable<T>> void InsertionSort(T[] a) {
         for (int p = 0; p < a.length; p++) {
             int i = p;
@@ -13,18 +14,19 @@ public class InsertionSortStd implements Sort {
                     i--;
                 } else
                     sorted = true;
+                this.compare++;
             }
         }
     }
 
     @Override
     public void sort(Comparable[] a) {
-        InsertionSort(a);
+        this.InsertionSort(a);
     }
 
     @Override
     public long getCompares() {
-        return 0;
+        return compare;
     }
 }
 
