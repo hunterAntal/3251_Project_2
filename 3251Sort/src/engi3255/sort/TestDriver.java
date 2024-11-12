@@ -5,9 +5,9 @@ public class TestDriver {
     static final int INSERTION = 0, SELECTION = 1, 
 	BUBBLE = 2, QUICK = 3;
     static Sort[] sorts = {
+	new BubbleSortStd(),
 	new InsertionSortStd(),
 	new SelectionSortStd(),
-	new BubbleSortStd(),
 	new QuickSortStd()
     };
     static String[] names = {

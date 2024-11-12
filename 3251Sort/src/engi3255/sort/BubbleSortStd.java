@@ -7,13 +7,15 @@ public class BubbleSortStd implements Sort {
         for (int last = a.length - 1; (last >= 1) && (!sorted); last--) {
             sorted = true;
             for (int i = 0; i < last; i++){
+                this.compare++;
                 if (a[i].compareTo(a[i + 1]) > 0) {
                     T tmp = a[i];
                     a[i] = a[i + 1];
                     a[i + 1] = tmp;
                     sorted = false;
+
                 }
-                this.compare++;
+
             }
 
         }
