@@ -1,4 +1,6 @@
-public class QuickSortStd {
+package engi3255.sort;
+
+public class QuickSortStd implements Sort{
     public <T extends Comparable<T>> void QuickSort(T[] a) {
         quicksort(a, 0, a.length - 1);
     }
@@ -30,7 +32,7 @@ public class QuickSortStd {
         if (low + CUTOFF > high)
             insertionSort(a, low, high);
         else {
-            // Sort low, middle, high
+            // engi3255.sort.Sort low, middle, high
             int middle = (low + high) / 2;
             if (a[middle].compareTo(a[low]) < 0)
                 swapReferences(a, low, middle);
@@ -58,8 +60,8 @@ public class QuickSortStd {
             // Restore pivot
             swapReferences(a, i, high - 1);
 
-            quicksort(a, low, i - 1);    // Sort small elements
-            quicksort(a, i + 1, high);   // Sort large elements
+            quicksort(a, low, i - 1);    // engi3255.sort.Sort small elements
+            quicksort(a, i + 1, high);   // engi3255.sort.Sort large elements
         }
     }
 
@@ -80,6 +82,16 @@ public class QuickSortStd {
                 a[j] = a[j - 1];
             a[j] = tmp;
         }
+    }
+
+    @Override
+    public void sort(Comparable[] a) {
+        QuickSort(a);
+    }
+
+    @Override
+    public long getCompares() {
+        return 0;
     }
 }
 

@@ -1,7 +1,9 @@
+package engi3255.sort;
+
 public interface Sort {
 
     /**
-     * Sort the array into ascending order
+     * engi3255.sort.Sort the array into ascending order
      *
      * @throws IllegalArgumentException if the argument is null
      */
